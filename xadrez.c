@@ -55,7 +55,7 @@ int main() {
         
     break;
     case 4:
-        printf("Digite quantos movimento a rainha vai fazer para a direita\n");// usuario decidi quantas casas a rainha vai andar
+        printf("Digite quantos movimento a rainha vai fazer para a esquerda\n");// usuario decidi quantas casas a rainha vai andar
         scanf("%d", &movimentoRainha);
         do
         {
@@ -71,7 +71,7 @@ int main() {
             printf("Movimento Rei\n");// Rei anda uma casa pra cima
             printf("Cima\n");
             R++;
-        } while (R == 2);  // condição falso para o rei so andar uma casa  
+        } while (R < 1);  // condição falso para o rei so andar uma casa  
 
     break;
     case 6:
@@ -82,12 +82,10 @@ int main() {
            printf("Direita ->\n");
            t++;
         }
-        
-
-
     break;
 
     default:
+        printf("Opção inválida!\n");
         break;
     }
 
