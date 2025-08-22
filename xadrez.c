@@ -5,19 +5,9 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    int c, b = 1, r = 1, R = 0, t = 1, escolhaUsuario, movimentoRainha; // declaração de variaveis
+    
+    int b = 1, r = 1, R = 0, t = 1, escolhaUsuario, movimentoRainha;
+    int movimento = 1; // declaração de variaveis
     // Menu interativo
     printf("**** Movimento das peças de xadrez ****\n");
     printf("Qual peça você quer mexer? \n");
@@ -42,7 +32,15 @@ int main() {
         }
         break;
     case 2:
-        printf("Movimento carvalo: em construção\n");// movimento do cavalo em construção
+        printf("Movimento carvalo:\n");// movimento do cavalo
+    while (movimento <= 1)
+    {
+        for(int c = 0; c < 2; c++){
+            printf("Baixo\n");
+        }
+        printf("Esqueda\n");
+        movimento++;
+    }
     break;
     case 3:
         printf("Movimento do Bispo\n");
