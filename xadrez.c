@@ -59,9 +59,9 @@ int main() {
     while (movimento <= 1)
     {
         for(int c = 1; c <= 2; c++){
-            printf("Baixo\n");
+            printf("cima\n");
         }
-        printf("Esqueda\n");
+        printf("direita\n");
         movimento++;
     }
     break;
@@ -71,13 +71,12 @@ int main() {
         
     break;
     case 4:
-        printf("Movimento a Rainha\n");// usuario decidi quantas casas a rainha vai andar
+        printf("Movimento a Rainha\n");
 
-        movimentoRainha(8);
+        movimentoRainha(8);// chama a função e atribui 5 a variavel casas
     
     break;
     case 5:
-        
         do
         {
             printf("Movimento Rei\n");// Rei anda uma casa pra cima
