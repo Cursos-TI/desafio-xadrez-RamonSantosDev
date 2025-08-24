@@ -4,9 +4,32 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void movimetoBispo(int casas){//função movimento bispo com variavel casas
+
+    if(casas > 0){ // condição casas maior que zero
+        printf("diagonal (cima e direita)\n");
+        movimetoBispo(casas - 1);// chamei a função dentro dela mesma para decrementar a variavel
+    }
+
+}
+void movimentoTorre(int casas){//função movimento Torre com variavel casas
+    if(casas > 0){// condição casas maior que zero
+        printf("direita ->\n");
+        movimentoTorre(casas - 1);// chamei a função dentro dela mesma para decrementar a variavel
+    
+    }
+}
+void movimentoRainha(int casas){
+    if(casas > 0){
+        printf("<- Esquerda\n");
+        movimentoRainha(casas - 1);
+    }
+}
+
 int main() {
     
-    int b = 1, r = 1, R = 0, t = 1, escolhaUsuario, movimentoRainha;
+    int b = 1, r = 1, R = 0, t = 1;
+    int escolhaUsuario;
     int movimento = 1; // declaração de variaveis
     // Menu interativo
     printf("**** Movimento das peças de xadrez ****\n");
@@ -35,7 +58,7 @@ int main() {
         printf("Movimento carvalo:\n");// movimento do cavalo
     while (movimento <= 1)
     {
-        for(int c = 0; c < 2; c++){
+        for(int c = 1; c <= 2; c++){
             printf("Baixo\n");
         }
         printf("Esqueda\n");
@@ -44,23 +67,14 @@ int main() {
     break;
     case 3:
         printf("Movimento do Bispo\n");
-
-        while (b <= 5)
-        {
-            printf("Cima e Direita\n"); // Movimento do Bisco 5 casas na Diagonal direita
-            b++;
-        }
+        movimetoBispo(5);// chama a função e atribui 5 a variavel casas
         
     break;
     case 4:
-        printf("Digite quantos movimento a rainha vai fazer para a esquerda\n");// usuario decidi quantas casas a rainha vai andar
-        scanf("%d", &movimentoRainha);
-        do
-        {
-            printf("<- Esquerda \n");
-            r++;
-        } while (r <= movimentoRainha);
+        printf("Movimento a Rainha\n");// usuario decidi quantas casas a rainha vai andar
 
+        movimentoRainha(8);
+    
     break;
     case 5:
         
@@ -74,12 +88,7 @@ int main() {
     break;
     case 6:
         printf("Movimento da Torre\n"); // torre anda 5 casas para a direita
-
-        while (t <= 5)
-        {
-           printf("Direita ->\n");
-           t++;
-        }
+        movimentoTorre(5);
     break;
 
     default:
